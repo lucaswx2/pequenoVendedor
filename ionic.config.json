@@ -1,0 +1,7 @@
+{
+  "name": "pequenoVendedor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
