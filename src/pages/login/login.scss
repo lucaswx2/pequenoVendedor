@@ -1,0 +1,35 @@
+page-login {
+  /*  #Style Login + logo
+================================================*/
+.logo {
+  width: 50%;
+  height: auto;
+  margin-top:5%;
+  margin-bottom: -5%;
+}
+
+  .text-input,
+  ion-label {
+    color: theme-colors('textColors', 'primary') !important;
+  }
+  .item-inner {
+    border-bottom-color: theme-colors('mainColors', 'secondary') !important;
+    box-shadow: none !important;
+  }
+  [button-clear] {
+    margin-top: 10px;
+  } // Socila Button
+  [social] {
+    margin: 20px auto 10px;
+    overflow: hidden;
+    button {
+      margin: 1%;
+      width: 48.5%;
+      display: block;
+      float: left;
+    }
+    >button:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}

@@ -6,6 +6,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { LoginPageModule } from '../pages/login/login.module';
+
+import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyDJJXPAyOaRiqQ6WkXrKf-AAYYrDYftvR4",
+  authDomain: "pequeno-vendedor.firebaseapp.com",
+  databaseURL: "https://pequeno-vendedor.firebaseio.com",
+  projectId: "pequeno-vendedor",
+  storageBucket: "pequeno-vendedor.appspot.com",
+  messagingSenderId: "700516159999"
+};
+
 
 @NgModule({
   declarations: [
@@ -14,7 +30,11 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    LoginPageModule,
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,7 +44,8 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuthProvider
   ]
 })
 export class AppModule {}
