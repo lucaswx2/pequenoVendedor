@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RegisterPage } from './register/register';
-
+import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { HomePage } from './../home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,18 +21,13 @@ export class LoginPage {
   @Input() data: any;
   @Input() events: any;
 
-  public username: string;
+  public email: string;
   public password: string;
 
-  constructor(private navCtrl:NavController) {}
+  constructor(private navCtrl:NavController,public authService:AuthServiceProvider) {}
 
   onEvent = (event: string): void => {
-    if (this.events[event]) {
-        this.events[event]({
-            'username' : this.username,
-            'password' : this.password
-        });
-    }
+
   }
 
   onRegister = ():void =>{
@@ -38,6 +35,8 @@ export class LoginPage {
   }
 
   onLogin = ():void =>{
-    console.log('login')
+    this.authService.signIn(this.email,this.password).then((res)=>{
+      this.navCtrl.setRoot(HomePage);
+    }).catch(err=>console.log(err.message));
   }
 }

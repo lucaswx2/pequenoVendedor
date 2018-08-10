@@ -1,1 +1,24 @@
-<ion-nav [root]="rootPage"></ion-nav>
+  <ion-menu [content]="content" >
+    <!-- Menu Main Top -->
+    <ion-header padding >
+      <ion-thumbnail   text-center>
+          <img width="100" [src]="user?.photoURL">
+        </ion-thumbnail>
+      <h2 item-title >{{user?.displayName}}</h2>
+    </ion-header>
+    <!-- Menu Main List -->
+    <ion-content>
+      <ion-list no-margin no-padding>
+        <button menuClose ion-item item-title no-padding main-menu *ngFor="let p of pages" (click)="openPage(p)">
+          <ion-icon padding-left name="{{p.icon}}"></ion-icon>
+          {{p.title}}
+        </button>
+        <button menuClose ion-item item-title no-padding main-menu  (click)="signOut()">
+          <ion-icon padding-left name="ios-exit-outline"></ion-icon>
+          Sair
+        </button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content main swipeBackEnabled="false"></ion-nav>

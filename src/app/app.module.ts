@@ -10,16 +10,16 @@ import { LoginPageModule } from '../pages/login/login.module';
 
 import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-
+import { UserProvider } from '../providers/user/user';
 export const firebaseConfig = {
   apiKey: "AIzaSyDJJXPAyOaRiqQ6WkXrKf-AAYYrDYftvR4",
   authDomain: "pequeno-vendedor.firebaseapp.com",
   databaseURL: "https://pequeno-vendedor.firebaseio.com",
   projectId: "pequeno-vendedor",
   storageBucket: "pequeno-vendedor.appspot.com",
-  messagingSenderId: "700516159999"
+  messagingSenderId: "700516159999",
 };
 
 
@@ -33,7 +33,7 @@ export const firebaseConfig = {
     LoginPageModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule.enablePersistence(),
+    AngularFirestoreModule,
     AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
@@ -45,7 +45,15 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AngularFireAuthProvider
+    AngularFireAuthProvider,
+    UserProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private afs: AngularFirestore) {
+    afs.firestore.settings({
+      timestampsInSnapshots: true,
+    });
+    afs.firestore.enablePersistence();
+  }
+}

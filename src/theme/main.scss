@@ -102,21 +102,21 @@ $text-font-size: 14px;
 $palettes: (
     mainColors: ( // Also used for backgrounds.
 
-        primary:   #424242, // Used for list color, list activated button, list border item color, header-title, header-subtitle, button-clear-outline, swipe, checkbox, tabs, search-bar, map-header, maps-title, maps-subtitle, toolbar, action-sheet, Loading, alert
+        primary:   #f7f7f7, // Used for list color, list activated button, list border item color, header-title, header-subtitle, button-clear-outline, swipe, checkbox, tabs, search-bar, map-header, maps-title, maps-subtitle, toolbar, action-sheet, Loading, alert
         secondary:  rgb(0, 174, 255), // Used for icon, item-divider, span, header-bcg, header-divider, button, fab button, checkbox, toggle, radio button, wizard-bcg, input field, range, search-bar, map-header, map-content, toolbar-background, alert, spiner
         accent:   #f7f7f7, //Used for background your app, list border item color, button, fab button, checkbox, action-sheet, alert
-        accentLight: #FEFEFE //Used for toggle
+        accentLight: #f7f7f7 //Used for toggle
     ),
 
     textColors: ( // Used for text colors in all screens
 
         primary: rgb(0, 174, 255), // Used for text colors in: item-title, button-clear, card-title, parallax-title, parallax-subtitle, tabs-title, tabs-subtitle, search-bar, loading, action-sheet, alert, wizard-body-text, wizard-title
-        secondary: #FEFEFE, // Used for text colors in: card-subtitle, item-subtitle, card-body-text, description, alert
-        accent:   #ffffff, // Used for text colors in: subitem-title, swiped-item-title, subitem-subtitle
+        secondary: #f7f7f7, // Used for text colors in: card-subtitle, item-subtitle, card-body-text, description, alert
+        accent:   #f7f7f7, // Used for text colors in: subitem-title, swiped-item-title, subitem-subtitle
     ),
     blendModes: ( // Used for blend modes
 
-        primary:  #ffffff,
+        primary:  #f7f7f7,
         secondary: #424242
     )
 );
