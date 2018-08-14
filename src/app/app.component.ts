@@ -23,6 +23,7 @@ export class MyApp {
   ) {
     this.pages = [
       {title:"Início",icon:"ios-home-outline",component:HomePage},
+      {title:"Meus produtos",icon:"ios-archive-outline",component:'ProdutosPage'},
     ]
     this.authServiceProvider.authState().subscribe(user=>{
       this.user = user;

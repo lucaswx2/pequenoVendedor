@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ProdutosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle color="light">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Meus Produtos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-grid no-padding >
+      <ion-row>
+        <ion-col col-12 *ngFor="let item of [1,2,3,4];let i = index">
+          <ion-card text-right (click)="onEvent('onItemClick', item.title, $event)">
+            <!--Card-image-->
+            <div card-image>
+              <img images-filter src="https://dafitistatic-a.akamaihd.net/p/Blume-Cal%C3%A7ados-Sapato-Blume-Lady-Rosa-Pink-1520-1873842-1-zoom.jpg" />
+              <!--Card-title-header-->
+              <!-- <h2 card-title>Teste</h2> -->
+            </div>
+            <!--Card-content-->
+            <ion-card-content>
+              <!--Card-title-->
+              <ion-card-title>
+                <!--Card-subtitle-->
+                <h1 card-subtitle>Sandália Havaianas</h1>
+              </ion-card-title>
+              <!--Description-->
+              <p card-body-text>Quantidade: 25 , Valor: R$ 8,00</p>
+            </ion-card-content>
+            <button ion-button default-button medium float-right (click)="onEvent('onShare', item, $event)">
+              Editar
+            </button>
+            <button ion-button danger-button medium float-right (click)="onEvent('onShare', item, $event)">
+                Excluir
+            </button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <!--Fab Button-->
+
+  </ion-content>
+
+ <ion-fab #fab bottom right>
+    <button button-ion-fab ion-fab (click)="newProduct()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>

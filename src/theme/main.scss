@@ -111,7 +111,7 @@ $palettes: (
     textColors: ( // Used for text colors in all screens
 
         primary: rgb(0, 174, 255), // Used for text colors in: item-title, button-clear, card-title, parallax-title, parallax-subtitle, tabs-title, tabs-subtitle, search-bar, loading, action-sheet, alert, wizard-body-text, wizard-title
-        secondary: #f7f7f7, // Used for text colors in: card-subtitle, item-subtitle, card-body-text, description, alert
+        secondary: #570150, // Used for text colors in: card-subtitle, item-subtitle, card-body-text, description, alert
         accent:   #f7f7f7, // Used for text colors in: subitem-title, swiped-item-title, subitem-subtitle
     ),
     blendModes: ( // Used for blend modes
@@ -486,7 +486,7 @@ $radio-ios-color-on:theme-colors('mainColors', 'secondary');
 /* 32# Wizard Settings Section
 ================================================*/
 [wizard-bcg] {
-  background-color: theme-colors('mainColors', 'secondary');
+  background-color: theme-colors('mainColors', 'primary');
 }
 [wizard-title] {
   color: theme-colors('textColors', 'primary');

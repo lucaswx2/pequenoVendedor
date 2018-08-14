@@ -13,6 +13,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule, AngularFirestore } from 'angularfire2/firestore';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { UserProvider } from '../providers/user/user';
+import { ProdutosPageModule } from '../pages/produtos/produtos.module';
 export const firebaseConfig = {
   apiKey: "AIzaSyDJJXPAyOaRiqQ6WkXrKf-AAYYrDYftvR4",
   authDomain: "pequeno-vendedor.firebaseapp.com",
@@ -35,6 +36,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    ProdutosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
